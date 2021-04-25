@@ -3,6 +3,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.neighbors import NearestNeighbors
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
+import pickle
 
 metadata = pd.read_csv('movies_comp.csv', low_memory=True)
 
@@ -14,3 +15,6 @@ KNN.fit(tfidf_matrix)
 
 df_all = metadata[['movieId','title']]
 
+pickle.dump(KNN, open('model.pkl','wb'))
+
+model = pickle.load(open('model.pkl','rb'))
