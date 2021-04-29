@@ -13,8 +13,10 @@ tfidf_matrix = tfidf.fit_transform(metadata['title'])
 KNN = NearestNeighbors(11,p=2)
 KNN.fit(tfidf_matrix)
 
-df_all = metadata[['movieId','title']]
-
 pickle.dump(KNN, open('model.pkl','wb'))
 
 model = pickle.load(open('model.pkl','rb'))
+
+pickle.dump(tfidf, open('model_tf.pkl','wb'))
+
+model_tfidf = pickle.load(open('model_tf.pkl','rb'))
