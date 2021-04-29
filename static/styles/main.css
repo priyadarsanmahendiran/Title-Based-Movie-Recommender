@@ -1,0 +1,38 @@
+body{
+    background-image: url('/static/images/isabella-and-zsa-fischer-16Tu8S18pu4-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+h4{
+    font-family: 'Roboto', sans-serif;
+    padding-top: 20px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 56px;
+    display: flex;
+    align-items: left;
+    font-variant: small-caps;
+    color: #000000;
+    backdrop-filter: blur(4px);
+}
+
+label{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-variant: small-caps;
+    font-weight: 500;
+    font-size: 24px;
+    color: #000000;
+}
+
+h6{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-variant: small-caps;
+    font-size: 30px;
+}

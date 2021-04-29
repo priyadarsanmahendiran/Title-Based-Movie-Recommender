@@ -1,39 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <style>
-        body{
-            padding-top: 10px;
-            background-image: url('/static/images/pexels-adrien-olichon-3709369.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: white;
-            text-align: center;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        }
-    </style>
-    
-    <title>Movie Recommender</title>
-</head>
-<body>
+{% extends 'base.html' %}
+    {% block body %}
     <div class="container">
-        <h4>Hollywood Movie Recommender</h4>
-        <form action="{{ url_for('predict')}}" method="POST">
-            <label for="name">Enter the movie name</label>
-            <input type="text" name="name" id="name">
-            <input class="btn btn-primary" type="submit" value="Find">
+    <div class="row">
+        <div class="col-12">
+            <h4 class="heading">hollywood movie recommender</h4>
+        </div>
+    </div>
+    <div class="row">
+        <form class="form-inline" action="{{ url_for('predict')}}" method="POST">
+            <div class="form-group mx-sm-3 mb-2">
+                <label for="name" class="sr-only">Movie Name</label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="Movie Name">
+              </div>
+              <button type="submit" class="btn btn-primary mb-2">Find</button>
         </form>
+    </div>
         {% if movies %}
-            <h4>The Movies similar are</h4>
+            <h6>the similar movies are</h6>
             {% for movie in movies %}
                 {{movie}}<br>
             {% endfor %}
         {% endif %}
-    </div>
-</body>
-</html>
+</div>
+    {% endblock body %}
